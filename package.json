@@ -1,0 +1,22 @@
+{
+  "name": "sixteen-clothing",
+  "version": "1.0.0",
+  "description": "Sixteen clothing",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malaika22/Sixteen-Clothing.git"
+  },
+  "author": "Malaika Afridi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malaika22/Sixteen-Clothing/issues"
+  },
+  "homepage": "https://github.com/malaika22/Sixteen-Clothing#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
