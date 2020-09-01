@@ -24,8 +24,12 @@ header{
     z-index: 999;
     width: 100%;
     align-items: center;
+    transition: all 0.3s ease-in-out 0s;
     .navbar{
       padding: 1px 0px;
+      i{
+          color: white;
+      }
     }
     h2{
         color: $mainText;
@@ -40,11 +44,15 @@ header{
         margin:0px 10px;
         a{
             color: $mainText;
-            border-bottom: 3px solid $subText ;
+            // border-bottom: 3px solid $subText ;
+            // opacity: 1;
             padding: 25px 0px;
+
         }
     }
 }
+
+
 
 
 
@@ -177,27 +185,54 @@ header{
 
  // ################Team-Section-Card-Style####################
 .team-section{
-
-    .hover-content{
-        .social-icons{
-            list-style: none;
-            display: flex;
+    .thumb-container{
+        position: relative;
+        .hover-effect{
+            position: absolute;
+            background-color: rgba(243,63,63,0.9);
+            top: 0;
+            left: 0;
             width: 100%;
-            justify-content: center;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s;
+        
+        .hover-content{
+            position: absolute;
+            display: inline-block;
+            width: 100%;
             text-align: center;
-            padding:0px;
-            li{
-               padding:20px 25px;
-                background-color: #eee;
-                margin: 0px 10px;
-                a{
-                    color:#121212;
-                    font-size:18px;
+            top: 50%;
+            transform: translateY(-50%);
+            .social-icons{
+                list-style: none;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                padding:0px;
+                li{
+                    display: inline-block;
+                    margin-right: 3px;
+                    a{
+                        width: 50px;
+                        height: 50px;
+                        display: inline-block;
+                        line-height: 50px;
+                        background-color: #eee;
+                        color: #121212;
+                        font-size: 18px;
+                        text-align: center;
+                        transition: all .3s;
+                    }
                 }
+        
             }
-    
         }
     }
+}
+    
     .team-info{
         text-align: center;
         .card-title{
@@ -212,7 +247,10 @@ header{
     }
 }
 
-
+.team-member:hover .hover-effect{
+    visibility: visible ;
+    opacity: 1;
+}
 
   // ################Services-Section-Style####################
 .services-section{
@@ -296,6 +334,7 @@ header{
                 background-color: #fff;
                 border: none;
                 padding-left: 0px;
+                cursor: pointer;
                 h6{
                     color: $memberName;
                     font-size: 20px;
@@ -312,7 +351,73 @@ header{
                 }
             }
         }
-    }
-  
 
+    }
+}
+
+
+
+// Nav bar Jquery Styling
+.scrollNav{
+    position: fixed;
+    top: 0;
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+    .navbar{
+        i{
+            color: $subText;
+        }
+        h2{
+            color: $sectionHeading;
+            em{
+                color: $subText;
+            }
+        }
+        .nav-item{
+            a{
+                color: $sectionHeading;
+                
+            }
+        }
+        .nav-item:active{
+            color: $subText;
+        }
+    }
+}
+
+
+
+
+// Media Queries
+@media screen and (max-width: 425px){
+    #myCarousel{
+        .carousel-item{
+            height: 600px;
+            .banner-text{
+                width: 90%;
+                top: 32%;
+                margin:auto;
+                h2{
+                   font-size: 50px;
+                }
+            }
+        }
+    }
+    .navbar{
+        li{
+            background-color: $mainText;
+            margin: 0px;
+            text-align: center;
+            a{
+                color: $sectionHeading;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    }
+    .lastest-products{
+        .product-section-heading{
+            display: block;
+        }
+    }
 }

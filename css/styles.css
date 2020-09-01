@@ -13,9 +13,12 @@ header {
   position: absolute;
   z-index: 999;
   width: 100%;
-  align-items: center; }
+  align-items: center;
+  transition: all 0.3s ease-in-out 0s; }
   header .navbar {
     padding: 1px 0px; }
+    header .navbar i {
+      color: white; }
   header h2 {
     color: #fff; }
     header h2 em {
@@ -26,7 +29,6 @@ header {
     margin: 0px 10px; }
     header .nav-item a {
       color: #fff;
-      border-bottom: 3px solid #f33f3f;
       padding: 25px 0px; }
 
 .carousel {
@@ -113,20 +115,45 @@ header {
     .lastest-products .card .card-body .product-rating li {
       margin: 0px 2px; }
 
-.team-section .hover-content .social-icons {
-  list-style: none;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  padding: 0px; }
-  .team-section .hover-content .social-icons li {
-    padding: 20px 25px;
-    background-color: #eee;
-    margin: 0px 10px; }
-    .team-section .hover-content .social-icons li a {
-      color: #121212;
-      font-size: 18px; }
+.team-section .thumb-container {
+  position: relative; }
+  .team-section .thumb-container .hover-effect {
+    position: absolute;
+    background-color: rgba(243, 63, 63, 0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s; }
+    .team-section .thumb-container .hover-effect .hover-content {
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%); }
+      .team-section .thumb-container .hover-effect .hover-content .social-icons {
+        list-style: none;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 0px; }
+        .team-section .thumb-container .hover-effect .hover-content .social-icons li {
+          display: inline-block;
+          margin-right: 3px; }
+          .team-section .thumb-container .hover-effect .hover-content .social-icons li a {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            line-height: 50px;
+            background-color: #eee;
+            color: #121212;
+            font-size: 18px;
+            text-align: center;
+            transition: all .3s; }
 
 .team-section .team-info {
   text-align: center; }
@@ -136,6 +163,10 @@ header {
   .team-section .team-info span {
     color: #f33f3f;
     font-size: 15px; }
+
+.team-member:hover .hover-effect {
+  visibility: visible;
+  opacity: 1; }
 
 .services-section {
   background-image: url("../images/services-bg.jpg");
@@ -197,7 +228,8 @@ header {
     .send-message #accordion .card .card-header {
       background-color: #fff;
       border: none;
-      padding-left: 0px; }
+      padding-left: 0px;
+      cursor: pointer; }
       .send-message #accordion .card .card-header h6 {
         color: #1a6692;
         font-size: 20px; }
@@ -209,3 +241,39 @@ header {
         font-weight: 300;
         color: #4a4a4a;
         line-height: 24px; }
+
+.scrollNav {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999; }
+  .scrollNav .navbar i {
+    color: #f33f3f; }
+  .scrollNav .navbar h2 {
+    color: #1e1e1e; }
+    .scrollNav .navbar h2 em {
+      color: #f33f3f; }
+  .scrollNav .navbar .nav-item a {
+    color: #1e1e1e; }
+  .scrollNav .navbar .nav-item:active {
+    color: #f33f3f; }
+
+@media screen and (max-width: 425px) {
+  #myCarousel .carousel-item {
+    height: 600px; }
+    #myCarousel .carousel-item .banner-text {
+      width: 90%;
+      top: 32%;
+      margin: auto; }
+      #myCarousel .carousel-item .banner-text h2 {
+        font-size: 50px; }
+  .navbar li {
+    background-color: #fff;
+    margin: 0px;
+    text-align: center; }
+    .navbar li a {
+      color: #1e1e1e;
+      border-bottom: 1px solid #eee; }
+  .lastest-products .product-section-heading {
+    display: block; } }
