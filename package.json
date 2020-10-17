@@ -15,7 +15,6 @@
     "imagemin": "imagemin images/* --out-dir='dist/images'",
     "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
     "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
-
   },
   "repository": {
     "type": "git",
@@ -28,6 +27,7 @@
   },
   "homepage": "https://github.com/malaika22/Sixteen-Clothing#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "lite-server": "^2.5.4",
     "node-sass": "^4.14.1",
     "onchange": "^3.3.0",
